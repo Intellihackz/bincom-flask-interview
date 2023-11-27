@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summed Total Results</title>
+  </head>
+  <body>
+    <h1>Summed Total Results</h1>
+    <form action="{{ url_for('summed_total_results') }}" method="post">
+      <label for="lga_select">Select Local Government:</label>
+      <select id="lga_select" name="lga">
+        {% for lga in lgas %}
+        <option value="{{ lga.lga_id }}">{{ lga.lga_name }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Get Summed Total Results</button>
+    </form>
+    <!-- Display summed total results here -->
+  </body>
+</html>
